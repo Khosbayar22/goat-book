@@ -8,8 +8,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import {useFonts} from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
-import db from "./utils/firestore"
 
 import FindWords from "./screens/FindWords";
 import FlashCards from "./screens/FlashCards";
@@ -92,22 +90,6 @@ function AppOverview() {
 }
 
 export default function App() {
-    const [vocabularyDoc, setVocabularyDoc] = useState(null);
-    const fetchVocabulary = () => {
-            const myDoc = doc(db, "vocabulary", "vocabulary")
-
-            getDoc(myDoc)
-                .then((snapshot) => {
-                    if (snapshot.exists) {
-                        setVocabularyDoc(snapshot.data())
-                    } else {
-                        console.log("Error")
-                    }
-                })
-                .catch((error) => {
-                    alert(error.message)
-                })
-        }
     const [fontsLoaded] = useFonts({
         'rubik-light': require('./assets/fonts/Rubik-Light.ttf'),
         'rubik-light-italic': require('./assets/fonts/Rubik-LightItalic.ttf'),

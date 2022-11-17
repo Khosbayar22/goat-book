@@ -10,7 +10,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
 
 function SwiperContainer() {
-    const [vocabularyDoc, setVocabularyDoc] = useState(null);
+    // const [vocabularyDoc, setVocabularyDoc] = useState(null);
 
     // const fetchVocabulary = () => {
     //     const myDoc = doc(db, "vocabulary", "vocabulary")
@@ -27,34 +27,33 @@ function SwiperContainer() {
     //             alert(error.message)
     //         })
     // }
-
-    let isShowPicture = false;
+    const [isShowPicture, setShowPicture] = useState(false);
 
     const CONTENTS = [
         {
             "text": "Морь",
-            "picture": ""
+            "picture": "https://images.unsplash.com/photo-1598974357801-cbca100e65d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
         },
         {
             "text": "Тэмээ",
-            "picture": ""
+            "picture": "https://images.unsplash.com/photo-1553983658-0d7afeb5c53f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
         },
         {
             "text": "Хонь",
-            "picture": ""
+            "picture": "https://images.unsplash.com/photo-1588942173353-0c53a1bf9081?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
         },
         {
             "text": "Ямаа",
-            "picture": ""
+            "picture": "https://images.unsplash.com/photo-1588466585717-f8041aec7875?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
         },
         {
             "text": "Үхэр",
-            "picture": ""
+            "picture": "https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=788&q=80"
         },
     ]
 
     const handlePicture = () => {
-        isShowPicture = !isShowPicture;
+        setShowPicture(!isShowPicture)
     }
     return (
         <View flex="1">
@@ -63,10 +62,10 @@ function SwiperContainer() {
                     cards={CONTENTS}
                     loop={false}
                     keyExtractor={(contentData) => String(contentData.text)}
-                    renderCard={(contentData) => <ContentCard name={contentData.text} isShowPicture={isShowPicture}/>}
+                    renderCard={(contentData) => <ContentCard name={contentData.text} picture={contentData.picture} isShowPicture={isShowPicture}/>}
                     renderNoMoreCards={() => <FinishedCard/>}
-                    showYup={false}
-                    showNope={false}
+                    showYup={true}
+                    showNope={true}
                     // renderYup={}
                 />
             </View>
