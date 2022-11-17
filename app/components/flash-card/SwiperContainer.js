@@ -1,5 +1,8 @@
+import {useState} from 'react';
 import {Box, Center, IconButton, Text, View} from "native-base";
 import SwipeCards from "react-native-swipe-cards-deck"
+// import { deleteDoc, doc, getDoc, setDoc } from 'firebase/firestore';
+// import {db} from '../../utils/firestore';
 
 import ContentCard from "./ContentCard";
 import FinishedCard from "./FinishedCard";
@@ -7,6 +10,24 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
 
 function SwiperContainer() {
+    const [vocabularyDoc, setVocabularyDoc] = useState(null);
+
+    // const fetchVocabulary = () => {
+    //     const myDoc = doc(db, "vocabulary", "vocabulary")
+    //
+    //     getDoc(myDoc)
+    //         .then((snapshot) => {
+    //             if (snapshot.exists) {
+    //                 setVocabularyDoc(snapshot.data())
+    //             } else {
+    //                 console.log("Error")
+    //             }
+    //         })
+    //         .catch((error) => {
+    //             alert(error.message)
+    //         })
+    // }
+
     let isShowPicture = false;
 
     const CONTENTS = [
