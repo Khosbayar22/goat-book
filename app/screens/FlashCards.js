@@ -1,10 +1,49 @@
-import { Text, View } from "native-base";
-import SwiperContainer from "../components/flash-card/SwiperContainer";
+import {Text, View} from "native-base";
+import {useContext, useEffect, useLayoutEffect} from "react";
 
-function FlashCards() {
+import SwiperContainer from "../components/flash-card/SwiperContainer";
+import {WordsContext} from "../stores/words-context";
+import MainAlert from "../components/flash-card/MainAlert";
+import {fetchWords} from "../utils/http";
+
+function FlashCards({route, navigation}) {
+    let levelId = route.params?.levelId;
+    let isLevelEditing = !!levelId;
+
+    function hideHeader() {
+        navigation.setOptions({
+            headerShown: false
+        })
+    }
+
+    const wordsCtx = useContext(WordsContext);
+
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            title: isLevelEditing ? `Уншлага ( ${levelId} нас)` : 'Уншлага',
+            headerShown: true
+        })
+    })
+
+    useEffect(() => {
+        async function getWords() {
+            await fetchWords();
+        }
+
+        getWords();
+    }, [])
+
+    let content = <MainAlert status={'info'} title={'Уучлаарай'}/>
+
+    const words = wordsCtx.words
+
+    if (words.length > 0) {
+        content = <SwiperContainer words={words} hideHeader={hideHeader}/>
+    }
+
     return (
         <View flex="1">
-            <SwiperContainer />
+            {content}
         </View>
     )
 }
