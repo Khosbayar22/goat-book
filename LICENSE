@@ -19,3 +19,109 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+// const data = [
+//     {
+//         "": 1,
+//         "text": "ам",
+//         "picture": "https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "а",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 2,
+//         "text": "алим",
+//         "picture": "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "а",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 3,
+//         "text": "сар",
+//         "picture": "https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "а",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 4,
+//         "text": "сандал",
+//         "picture": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2hhaXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "а",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 5,
+//         "text": "заан",
+//         "picture": "https://images.unsplash.com/photo-1599921778557-082147629542?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "аа",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 6,
+//         "text": "зараа",
+//         "picture": "https://images.unsplash.com/photo-1613566643144-0855efc7582a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "аа",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 7,
+//         "text": "ваар",
+//         "picture": "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmFzZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "аа",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 8,
+//         "text": "нэг",
+//         "picture": "https://images.unsplash.com/photo-1560363199-a1264d4ea5fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bnVtYmVyJTIwMXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "э",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 9,
+//         "text": "цэцэг",
+//         "picture": "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zmxvd2VyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "э",
+//         "level_name": "vowels"
+//     },
+//     {
+//         "": 10,
+//         "text": "эмээл",
+//         "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/MongolianSaddle.jpg/1200px-MongolianSaddle.jpg",
+//         "level": 1,
+//         "type": "letter",
+//         "highlight": "ээ",
+//         "level_name": "vowels"
+//     }
+// ]
+// for (const i of data) {
+//     const payload = {
+//         "text": i['text'],
+//         "picture": i['picture'],
+//         "level": i['level'],
+//         "type": i['type'],
+//         "highlight": i['highlight'],
+//         "level_name": i['level_name'],
+//     }
+//     const response = axios.post(url, payload)
+//     console.log(response)
+// }

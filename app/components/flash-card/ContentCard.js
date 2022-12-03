@@ -4,7 +4,7 @@ import React from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 function ContentCards({name, picture, isShowPicture, closePicture}) {
-    setTimeout(closePicture, 2000);
+    setTimeout(closePicture, 3000);
     return (
         <Center flex={1} justifyContent="center" alignItems="center">
             <Box rounded="lg" alignItems="center" justifyContent="center" w="100%" h="400" p={4} my={3}>

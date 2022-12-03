@@ -6,10 +6,41 @@ import ContentCard from "./ContentCard";
 import FinishedCard from "./FinishedCard";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import React from "react";
+import {useRoute} from "@react-navigation/native";
 
 function SwiperContainer({words, hideHeader}) {
     const [isShowPicture, setShowPicture] = useState(false)
     const [isFinished, setFinished] = useState(false);
+    const route = useRoute();
+
+    let showIconButton;
+    // !isFinished &&
+    if (route.name === 'FlashCards' && !isFinished) {
+        showIconButton = <Center flex="1">
+            <IconButton borderRadius="full" onPress={() => handlePicture()} _icon={{
+                as: Ionicons,
+                color: "brand.700",
+                name: "eye",
+                size: "4xl",
+            }} _hover={{
+                bg: "brand.700:alpha.20"
+            }} _pressed={{
+                bg: "brand.700:alpha.20",
+                _icon: {
+                    name: "eye-off"
+                },
+                _ios: {
+                    _icon: {
+                        size: "2xl"
+                    }
+                }
+            }} _ios={{
+                _icon: {
+                    size: "2xl"
+                }
+            }}/>
+        </Center>
+    }
 
     const handlePicture = () => {
         setShowPicture(!isShowPicture)
@@ -44,30 +75,7 @@ function SwiperContainer({words, hideHeader}) {
                 />
             </View>
             {
-                !isFinished && <Center flex="1">
-                    <IconButton borderRadius="full" onPress={() => handlePicture()} _icon={{
-                        as: Ionicons,
-                        color: "brand.700",
-                        name: "eye",
-                        size: "4xl",
-                    }} _hover={{
-                        bg: "brand.700:alpha.20"
-                    }} _pressed={{
-                        bg: "brand.700:alpha.20",
-                        _icon: {
-                            name: "eye-off"
-                        },
-                        _ios: {
-                            _icon: {
-                                size: "2xl"
-                            }
-                        }
-                    }} _ios={{
-                        _icon: {
-                            size: "2xl"
-                        }
-                    }}/>
-                </Center>
+                showIconButton
             }
 
         </View>

@@ -5,12 +5,6 @@ import {WordsContext} from "../../stores/words-context";
 import {useNavigation} from "@react-navigation/native";
 
 function FinishedCard() {
-    // console.log(navigation)
-    // useLayoutEffect(() => {
-    //     navigation.setOptions({
-    //         headerShown: false
-    //     })
-    // })
     const navigation = useNavigation();
     const wordsCtx = useContext(WordsContext);
 

@@ -27,7 +27,8 @@ function FlashCards({route, navigation}) {
 
     useEffect(() => {
         async function getWords() {
-            await fetchWords();
+            const words = await fetchWords();
+            wordsCtx.setWords(words)
         }
 
         getWords();
