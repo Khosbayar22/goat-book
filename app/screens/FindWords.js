@@ -5,7 +5,6 @@ import SwiperContainer from "../components/flash-card/SwiperContainer";
 import {WordsContext} from "../stores/words-context";
 import MainAlert from "../components/flash-card/MainAlert";
 import {fetchWords} from "../utils/http";
-import Temp from "../components/flash-card/Temp"
 
 function FindWords({route, navigation}) {
     let levelId = route.params?.levelId;
@@ -35,18 +34,20 @@ function FindWords({route, navigation}) {
         getWords();
     }, [])
 
-    let content = <MainAlert status={'info'} title={'Уучлаарай'}/>
+    let content;
 
     const words = wordsCtx.words
 
     if (words.length > 0) {
         content = <SwiperContainer words={words} hideHeader={hideHeader} isShowPictureArgs={true}/>
+    } else {
+        content = <MainAlert status={'info'} title={'Уучлаарай'}/>
     }
+
 
     return (
         <View flex="1">
-            {/*{content}*/}
-            <Temp />
+            {content}
         </View>
     )
 }

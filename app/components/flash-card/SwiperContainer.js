@@ -12,9 +12,10 @@ function SwiperContainer({words, hideHeader}) {
     const [isShowPicture, setShowPicture] = useState(false)
     const [isFinished, setFinished] = useState(false);
     const route = useRoute();
+    const swipeCardRef = React.createRef();
 
     let showIconButton;
-    // !isFinished &&
+
     if (route.name === 'FlashCards' && !isFinished) {
         showIconButton = <Center flex="1">
             <IconButton borderRadius="full" onPress={() => handlePicture()} _icon={{
@@ -45,6 +46,9 @@ function SwiperContainer({words, hideHeader}) {
     const handlePicture = () => {
         setShowPicture(!isShowPicture)
     }
+    const swipeRight = () => {
+        swipeCardRef.current._forceRightSwipe()
+    }
     const closePicture = () => {
         setShowPicture(false)
     }
@@ -54,15 +58,18 @@ function SwiperContainer({words, hideHeader}) {
                 <SwipeCards
                     cards={words}
                     loop={false}
+                    ref={swipeCardRef}
                     keyExtractor={(contentData) => String(contentData.text)}
                     renderCard={(contentData) => <ContentCard name={contentData.text} picture={contentData.picture}
                                                               isShowPicture={isShowPicture}
-                                                              closePicture={closePicture}/>}
+                                                              closePicture={closePicture}
+                                                              swipeRight={swipeRight}
+                    />}
                     renderNoMoreCards={() => {
                         setFinished(true);
                         hideHeader();
                         return (
-                            <FinishedCard />
+                            <FinishedCard/>
                         )
                     }}
                     showYup={false}

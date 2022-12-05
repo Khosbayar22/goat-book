@@ -1,75 +1,48 @@
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import {StyleSheet, Text, View, Dimensions} from 'react-native';
 import {useState} from "react";
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { DraxProvider, DraxView, DraxList } from 'react-native-drax';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {DraxProvider, DraxView, DraxList} from 'react-native-drax';
 
 export default function Temp() {
 
     const draggableItemList = [
         {
             "id": 1,
-            "name": "A",
+            "name": "А",
             "background_color": "red"
         },
         {
             "id": 2,
-            "name": "B",
+            "name": "Э",
             "background_color": "pink"
         },
         {
             "id": 3,
-            "name": "C",
+            "name": "О",
             "background_color": "orange"
 
         },
         {
             "id": 4,
-            "name": "D",
+            "name": "Ө",
             "background_color": "#aaaaff"
         },
         {
             "id": 5,
-            "name": "E",
+            "name": "Ү",
             "background_color": "blue"
         },
         {
             "id": 6,
-            "name": "F",
+            "name": "И",
             "background_color": "green"
         },
         {
             "id": 7,
-            "name": "G",
+            "name": "У",
             "background_color": "brown"
 
         },
-        {
-            "id": 8,
-            "name": "H",
-            "background_color": "#aaaaff"
-        },
-        {
-            "id": 9,
-            "name": "I",
-            "background_color": "red"
-        },
-        {
-            "id": 10,
-            "name": "J",
-            "background_color": "pink"
-        },
-        {
-            "id": 11,
-            "name": "K",
-            "background_color": "orange"
-
-        },
-        {
-            "id": 12,
-            "name": "L",
-            "background_color": "#aaaaff"
-        }
-
     ];
     const FirstReceivingItemList = [
         {
@@ -97,10 +70,10 @@ export default function Temp() {
     const [receivingItemList, setReceivedItemList] = useState(FirstReceivingItemList);
     const [dragItemMiddleList, setDragItemListMiddle] = useState(draggableItemList);
 
-    const DragUIComponent = ({ item, index }) => {
+    const DragUIComponent = ({item, index}) => {
         return (
             <DraxView
-                style={[styles.centeredContent, styles.draggableBox, { backgroundColor: item.background_color }]}
+                style={[styles.centeredContent, styles.draggableBox, {backgroundColor: item.background_color}]}
                 draggingStyle={styles.dragging}
                 dragReleasedStyle={styles.dragging}
                 hoverDraggingStyle={styles.hoverDragging}
@@ -113,12 +86,12 @@ export default function Temp() {
         );
     }
 
-    const ReceivingZoneUIComponent = ({ item, index }) => {
+    const ReceivingZoneUIComponent = ({item, index}) => {
         return (
             <DraxView
-                style={[styles.centeredContent, styles.receivingZone, { backgroundColor: item.background_color }]}
+                style={[styles.centeredContent, styles.receivingZone, {backgroundColor: item.background_color}]}
                 receivingStyle={styles.receiving}
-                renderContent={({ viewState }) => {
+                renderContent={({viewState}) => {
                     const receivingDrag = viewState && viewState.receivingDrag;
                     const payload = receivingDrag && receivingDrag.payload;
                     return (
@@ -148,19 +121,15 @@ export default function Temp() {
     }
 
     const FlatListItemSeparator = () => {
-        return (<View style={styles.itemSeparator} />);
+        return (<View style={styles.itemSeparator}/>);
     }
 
     return (
-        <GestureHandlerRootView
-            style={{flex: 1}}>
-            <View>
-                <Text style={styles.headerStyle}>{'Drag drop and swap between lists'}</Text>
-            </View>
+        <GestureHandlerRootView style={{flex: 1}}>
             <DraxProvider>
                 <View style={styles.container}>
                     <View style={styles.receivingContainer}>
-                        {receivingItemList.map((item, index) => ReceivingZoneUIComponent({ item, index }))}
+                        {receivingItemList.map((item, index) => ReceivingZoneUIComponent({item, index}))}
                     </View>
                     <View style={styles.draxListContainer}>
                         <DraxList
@@ -186,7 +155,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     centeredContent: {
-        borderRadius: 10,
+            borderRadius: 10,
     },
     receivingZone: {
         height: (Dimensions.get('window').width / 4) - 12,

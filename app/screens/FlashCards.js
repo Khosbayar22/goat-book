@@ -8,6 +8,7 @@ import {fetchWords} from "../utils/http";
 
 function FlashCards({route, navigation}) {
     let levelId = route.params?.levelId;
+    let levelName = route.params?.levelName;
     let isLevelEditing = !!levelId;
 
     function hideHeader() {
@@ -20,7 +21,7 @@ function FlashCards({route, navigation}) {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: isLevelEditing ? `Уншлага ( ${levelId} нас)` : 'Уншлага',
+            title: isLevelEditing ? `Уншлага ( ${levelName})` : 'Уншлага',
             headerShown: true
         })
     })

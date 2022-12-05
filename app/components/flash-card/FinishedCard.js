@@ -3,6 +3,7 @@ import React, {useContext, useLayoutEffect} from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import {WordsContext} from "../../stores/words-context";
 import {useNavigation} from "@react-navigation/native";
+import {Image} from "react-native";
 
 function FinishedCard() {
     const navigation = useNavigation();
@@ -16,6 +17,7 @@ function FinishedCard() {
     return (
         <View h="100%" w="100%" flex={1} justifyContent="center" alignItems="center" bg="brand.700">
             <VStack space={4} alignItems="center">
+                <Image source={require("../../assets/winner.png")} style={{height: 250, width: 250}}/>
                 <Heading color="white" size="lg">Баяр хүргэе 🎉</Heading>
                 <HStack space={3} justifyContent="center">
                     <IconButton borderRadius="full" bg="gray.50" onPress={resetGame}

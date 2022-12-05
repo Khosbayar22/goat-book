@@ -85,7 +85,7 @@ function AppOverview() {
                 },
                 tabBarIcon({color, size}) {
                     return (
-                        <Ionicons name="home" color={color} size={size}/>
+                        <Image source={require("./assets/goat.png")} style={{height: 40, width: 40}}/>
                     )
                 }
             }}/>

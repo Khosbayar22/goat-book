@@ -9,7 +9,6 @@ export const WordsContext = createContext({
 function wordsReducer(state, action) {
     switch (action.type) {
         case 'filterLevel':
-            console.log('state', state)
             return state.filter((word) => word.level === action.payload)
         case 'resetWords':
             return state.sort((a, b) => {
