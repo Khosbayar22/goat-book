@@ -8,4 +8,4 @@ https://docs.google.com/presentation/d/1zTHoN3KJo67w3swKhZFY5Ll6NyyaYt-YDOJTVxsj
 
 ## Screenshots
 
-![Game Screenshot]()
+![Game Screenshot](https://raw.githubusercontent.com/Khosbayar22/goat-book/main/screenshots/app-ui.png?token=GHSAT0AAAAAACBEWT2KUQMJSSSX7X4ZXLDQZCF24EA)
